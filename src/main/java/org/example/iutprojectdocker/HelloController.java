@@ -34,19 +34,19 @@ public class HelloController {
     @GetMapping("/")
     public String hello() {
         try {
-<<<<<<< HEAD
+
             String appUser = System.getenv("APP_USER");
             String name = (appUser == null || appUser.isEmpty()) ? "World" : appUser;
 
             String base = String.format("Hello %s!", name);
             return base;
-=======
+
             Long count = getHitCountSafe();
             String base = "Hello World";
             return (count == null)
                     ? base + " (Redis indisponible)\n"
                     : base + String.format(" J'ai été visité %d fois.\n", count);
->>>>>>> origin/redis-feature
+	 origin/redis-feature
 
         } catch (Exception e) {
             return "Error: " + e.getMessage();
